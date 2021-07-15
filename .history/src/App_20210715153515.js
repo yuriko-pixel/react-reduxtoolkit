@@ -14,10 +14,10 @@ export default function App() {
   return (
     <div className="App">
       <h2>Todo</h2>
-      <ul>{todo.map(item => <li key={Math.random()}>{item.todo}</li>)}</ul>
+      {todo.map(item => <p>{item.todo}</p>)}
       <form>
         <input type="text" value={input} onChange={(e)=>setInput(e.target.value)}/>
-        <button onClick={(e) => {e.preventDefault(); dispatch(addTodo(input))}}>Submit</button>
+        <button onClick={() => dispatch(addTodo(input))}>Submit</button>
       </form>
     </div>
   );
